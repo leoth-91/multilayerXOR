@@ -26,13 +26,15 @@ Loss: Root Mean Square error (RMS):
 where the index i runs over all Neurons of the layer (here that is only one).
 
 
-At every step a smoothed error measurement is put out, recursively it can be defined like this:
+At every step a smoothed error measurement (RAE) is put out, recursively it can be defined like this:
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cfrac%7B%5Cxi%5Ccdot%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D%7D%7B1&plus;%5Cxi%7D)
 
-with the smoothing factor xi. The intution here is: the smoothing factor adjusts how much a single loss value contributes tu the Recent Average Error
+with the smoothing factor xi. The intution here is: the smoothing factor adjusts how much a single loss value contributes to the RAE
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D/%5Cxi%5Cquad%20%28%5Cmathrm%7Bapproximately%7D%29)
+
+
 
 # Exclusive OR
 
@@ -75,6 +77,7 @@ then run
 python plot.py 
 ```
 
+![Image of RAE plot](https://raw.githubusercontent.com/leoth-91/multilayerXOR/master/error.png)
 
 
 
