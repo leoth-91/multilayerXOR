@@ -30,7 +30,7 @@ The XOR returns True if the inputs are distinct and False otherwise:
  1            | 1             | 0           
 
 ## CSWAP
-Many logical 2-bit gates (eg. AND, OR) can be modeled by a simple Perceptron. The Controlled SWAP (CSWAP) gate or Fredkin gate [wikipedia](https://en.wikipedia.org/wiki/Fredkin_gate) is a special case, it has 3 input and 3 output bits. It works as follows:
+Many logical 2-bit gates (eg. AND, OR) can be modeled by a simple Perceptron. The Controlled SWAP (CSWAP) gate or Fredkin gate ([wikipedia](https://en.wikipedia.org/wiki/Fredkin_gate)) is a special case, it has 3 input and 3 output bits. It works as follows:
 
 If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in the following table
 
