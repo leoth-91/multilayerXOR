@@ -31,17 +31,7 @@ the intution here is: the smoothing factor xi adjusts how much a single loss val
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D/%5Cxi%5Cquad%20%28%5Cmathrm%7Bapproximately%7D%29)
 
-
-
-
-
-## Pipeline
-
-# Generating data
-# Training
-
-
-## Exclusive OR
+# Exclusive OR
 
 Many binary operators (eg. AND, OR) can be modeled by a simple Neural Network. 
 
@@ -52,29 +42,32 @@ The XOR function should return a true value if the two inputs are not equal and 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cbegin%7Btabular%7D%7Bc%7Cc%7Cc%7D%5Chline%20Input%201%20%26Input%202%20%26Output%20%5C%5C%20%5Chline%5Chline%200%20%260%20%260%20%5C%5C%20%5Chline%200%20%261%20%261%20%5C%5C%20%5Chline%201%20%260%20%261%20%5C%5C%20%5Chline%201%20%261%20%260%20%5C%5C%20%5Chline%20%5Cend%7Btabular%7D)
 
 
+# Pipeline
 
-## Usage
-
-# Producing data
-
-
+## Generating data
+## Training
 
 
-then run
+
+<!-- ############################################################################################ -->
+
+
+# Usage
+
+## Producing data
+
 ```bash
 g++ -o data_gen data_gen.cpp
 ./data_gen
 ```
-<!-- other options
--- path: the path, default is 'data/'
--- ext: extension of output files, default is '.dat'
- -->
-The trainging:
+
+## Training
 ```bash
 g++ -o training training.cpp
 ./training
 ```
 
+## Plotting the error curve
 The plotting script utilizes **numpy** and **matplotlib**:
 
 ```bash
