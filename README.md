@@ -18,7 +18,7 @@ The Neural Network (header/NeuralNetwork.h) can be initialized with different nu
 
 But first:
 ## XOR
-Logical gates such as e.g. AND, OR can typically modelled by a single Perceptron. The exclisive OR (XOR) is an exception to that as it is **not linearly separable** and a Neural Network requires a **hidden layer** to emulate it.
+Logical gates such as e.g. AND, OR can typically modeled by a single perceptron. The exclusive OR (XOR) is an exception to that as it is **not linearly separable** and a Neural Network requires a **hidden layer** to emulate it.
 
 The XOR returns True if the inputs are distinct and False otherwise:
 
@@ -49,9 +49,9 @@ If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in 
 # Neural Network
 The Neural Network has 3 layers: **input**, **output** and a *hidden layer**. The numbers of neurons per layer is variable and the number of input/output neurons will be inferred from the data provided. 
 
-For the XOR gate, the network will have 2 inoputs and 1 output. In the case of the CSWAP gate the network will have 3 inputs and 3 outputs. The number of hidden neurons is 2 by defaulf and should be adjusted upwards when training the model on CSWAP data.
+For the XOR gate, the network will have 2 inputs and 1 output. In the case of the CSWAP gate the network will have 3 inputs and 3 outputs. The number of hidden neurons is 2 by default and should be adjusted upwards when training the model on CSWAP data.
 
-As activation function the hyperbilic tangent function is used: **tanh(x)**
+As activation function the hyperbolic tangent function is used: **tanh(x)**
 
 Loss: Root Mean Square error (**RMS**):
 
@@ -63,7 +63,7 @@ At every step a smoothed error measurement (**RAE**) is put out, recursively it 
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cfrac%7B%5Cxi%5Ccdot%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D%7D%7B1&plus;%5Cxi%7D)
 
-with the smoothing factor xi. The intution here is: the smoothing factor adjusts how much a single loss value contributes to the RAE
+with the smoothing factor xi. The intuition here is: the smoothing factor adjusts how much a single loss value contributes to the RAE
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D/%5Cxi%5Cquad%20%28%5Cmathrm%7Bapproximately%7D%29)
 
