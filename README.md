@@ -10,9 +10,12 @@ This repository is a slightly brushed up version of this project, it makes use o
 ## Neural Network
 
 The Neural Network has 3 layers, input, output and a hidden layer. The numbers of Neurons per layer is variable, here of course we have
- -- 2 input Neuons
- -- 2 hidden Neuons
- -- 1 output Neuons
+
+ - 2 input Neuons
+
+ - 2 hidden Neuons
+
+ - 1 output Neuons
 
 Activation: tanh()
 
@@ -72,7 +75,7 @@ g++ -o training training.cpp
 ./training
 ```
 
-The plotting script utilizes **numpy** and **matplitlib**:
+The plotting script utilizes **numpy** and **matplotlib**:
 
 ```bash
 pip install numpy
