@@ -1,6 +1,5 @@
 
 std::vector< std::vector<double> > load_dat_file(std::string path){
-	
 	std::vector< std::vector<double> > data;
 
 	std::ifstream file(path);

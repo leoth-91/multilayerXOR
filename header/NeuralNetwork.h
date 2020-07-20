@@ -49,15 +49,6 @@ private:
 
 
 
-
-
-
-
-
-
-
-
-
 /*
 	Definitions of the declared functions
 */
@@ -65,12 +56,10 @@ private:
 double Neuron::eta   = 0.08;
 double Neuron::alpha = 0.1;	
 
-
 Neuron::Neuron(int numOutputs, int myIndex){
 	for(int c=0; c<numOutputs; c++){			// All connections
 		outputWeights.push_back(drand48());		// Gives Neuron outputweights between 0 and 1
 		deltaOutputWeights.push_back(0);		// Some initialization
-
 	}
 	m_myIndex = myIndex;
 }
@@ -143,10 +132,7 @@ void Neuron::updateInputWeight(std::vector<Neuron> &prevLayer){
 }
 
 
-
-
 Network::Network(const int N_in, const int N_hid, const int N_out){
-
 	// Create input layer:
 	for(int neuronNum = 0; neuronNum<=N_in; neuronNum++){	// <= because we create a bias
 		// Create a new neuron
@@ -219,22 +205,17 @@ void Network::backPropagation(const std::vector<double> &targetValues){
 		// Here we do need to use the API because class Net soes not know class Neurons private members
 		error += delta*delta;
 	}
-
-	// recent average measurement
+	// recent average measurement: RAE_(n+1) = (RAE_n*smoothing + error)/(smoothing + 1)
     recentAverageError = (recentAverageError * recentAverageSmoothingFactor + error) / (recentAverageSmoothingFactor + 1.0);
-	
-    // RAE_(n+1) = (RAE_n*smoothing + error)/(smoothing + 1)
 
 	// Calculate output layer gradient
 	for(int n=0; n<outputLayer.size() - 1; n++){	// All neurons except bias
 		outputLayer[n].calcOutputGradients(targetValues[n]);
 	}
-
 	// Calculate output hidden gradient
 	for(int n=0; n<hiddenLayer.size() - 1; n++){	// All neurons except bias
 		hiddenLayer[n].calcHiddenGradients(outputLayer);
 	}
-
 	// Update connection weights for output layer
 	for(int n=0; n<outputLayer.size() - 1; n++){	// All neurons except bias
 		outputLayer[n].updateInputWeight(hiddenLayer);

@@ -10,11 +10,8 @@
 #include "header/util.h"
 #include "header/NeuralNetwork.h"
 
-
 int main(){
-
 	clock_t START_TIMER = clock();
-
 
 	std::vector< std::vector<double> > train_data  = load_dat_file("data/train_data.dat");
 	std::vector< std::vector<double> > train_label = load_dat_file("data/train_labels.dat");
@@ -24,7 +21,7 @@ int main(){
 	int N_samples = train_data.size();
 
 	int N_in = train_data[0].size();
-	int N_hid = 2;
+	int N_hid = N_in;
 	int N_out = train_label[0].size();
 
 	std::cout << "Training on " << N_samples << " Samples." << std::endl;
@@ -120,7 +117,6 @@ int main(){
 	if(time > 60) std::cout << " (Runtime: " << round(time/60) << " min)" << std::endl;
 	else if(time < 1) std::cout << " (Runtime: " << round(time*1000) << " ms)" << std::endl;
 	else std::cout << " (Runtime: " << round(time) << " s)" << std::endl;
-
 
 	return 0;
 }

@@ -1,18 +1,13 @@
 import numpy as np
-import matplotlib
 from matplotlib import pyplot as plt 
-
-from datetime import datetime
 
 from matplotlib import rcParams
 rcParams['font.family'] = 'serif'
 rcParams.update({'text.usetex': True})
 rcParams.update({'figure.autolayout': True})
 
-
 path = 'error.txt'
 plot_path = 'weight.png'
-
 
 print('Creating Loss Plot:')
 dpi = 300

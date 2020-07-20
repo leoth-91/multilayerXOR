@@ -24,7 +24,6 @@ double average(std::vector<double> vector){
 	return avg;
 }
 
-
 double round(double var, int num){
 	int number = pow(10,num);
 	return (double)((int)(var * number + .5))/number;
