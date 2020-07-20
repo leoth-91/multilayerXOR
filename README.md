@@ -7,16 +7,14 @@ This repository is a slightly brushed up version of this project, it makes use o
 
 The pipeline 
  - creates training and testing samples of the XOR or CSWAP gate (a 3-bit gate)
- - fits the model to the training data 
+ - fits the model to the training data and evaluates the performance on the test set.
  - creates a plot of the error measure
 
 [Logical Gates](#LogicalGates) | [Neural Network](#NeuralNetwork) | [Pipeline](#Pipeline)
 
 
 # Logical gates
-The Neural Network (header/NeuralNetwork.h) can be initialized with different numbers of neurons in each layer. This invites to experiment with more exotic types of gates (i.e. 3-bit gates)
-
-But first:
+The Neural Network (header/NeuralNetwork.h) can be initialized with different numbers of neurons in each layer. This invites to experiment with more exotic types of gates - but first:
 ## XOR
 Logical gates such as e.g. AND, OR can typically modeled by a single perceptron. The exclusive OR (XOR) is an exception to that as it is **not linearly separable** and a Neural Network requires a **hidden layer** to emulate it.
 
