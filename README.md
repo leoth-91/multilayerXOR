@@ -7,13 +7,16 @@ This repository is a slightly brushed up version of this project, it makes use o
 
 The pipeline 
  - creates training and testing samples of the XOR or CSWAP gate (a 3-bit gate)
+ - fits the model to the training data 
+ - creates a plot of the error measure
 
 [Logical Gates](#LogicalGates) | [Neural Network](#NeuralNetwork) | [Pipeline](#Pipeline)
 
 
 # Logical gates
-The Neural Network (header/NeuralNetwork.h) can be initialized with different numbers of Neurons in each layer.
+The Neural Network (header/NeuralNetwork.h) can be initialized with different numbers of Neurons in each layer. This invites to experiment with more exotic types of gates (i.e. 3-bit gates)
 
+But first:
 ## XOR
 Logical gates such as e.g. AND, OR can typically modelled by a single Perceptron. The exclisive OR (XOR) is an exception to that as it is **not linearly separable** and a Neurtal Network requires a **hidden layer** to emulate it.
 
@@ -26,9 +29,7 @@ The XOR returns True if the inputs are distinct and False otherwise:
  1            | 0             | 1           
  1            | 1             | 0           
 
-
 ## CSWAP
-
 Many logical 2-bit gates (eg. AND, OR) can be modeled by a simple Perceptron. The Controlled SWAP (CSWAP) gate or Fredkin gate ![wiki](https://en.wikipedia.org/wiki/Fredkin_gate) is a special case, it has 3 input and 3 output bits. It works as follows:
 
 If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in the following table
@@ -43,9 +44,6 @@ If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in 
  1            | 0             | 1            | 1            | 1            | 0
  1            | 1             | 0            | 1            | 0            | 1
  1            | 1             | 1            | 1            | 1            | 1
-
-
-
 
 
 # Neural Network
