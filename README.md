@@ -5,9 +5,9 @@ A couple of years ago I had to come up with a project for a course and decided t
 
 This repository is a slightly brushed up version of this project, it makes use of the original Neural Network class written for the course (header/NeuralNetwork.h) and I have added python scripts for conveniently generating data and plotting errors.
 
-[Neural Network](#NeuralNetwork) | [Pipeline](#Pipeline) | [Exclusive OR](#ExclusiveOR) | [Usage](#Usage)
+[Neural Network](#NeuralNetwork) | [Exclusive OR](#ExclusiveOR) | [Pipeline](#Pipeline)
 
-## Neural Network
+# Neural Network
 
 The Neural Network has 3 layers, input, output and a hidden layer. The numbers of Neurons per layer is variable, here of course we have
 
@@ -17,17 +17,20 @@ The Neural Network has 3 layers, input, output and a hidden layer. The numbers o
 
  - 1 output Neuons
 
-Activation: tanh()
+As activation function the hyperbilic tangent function is used: **tanh(x)**
 
-Loss: RMS
+Loss: Root Mean Square error (RMS):
+
+![equ](https://latex.codecogs.com/gif.latex?%5Ctext%7BRMS%7D%20%3D%20%5Csqrt%7B%5Cfrac%201N%5Csum_%7Bi%3D0%7D%5EN%20%28%5Cmathrm%7Btext%7D%20-%20%5Ctext%7Bprediction%7D%29%5E2%7D)
+
+where the index i runs over all Neurons of the layer (here that is only one).
 
 
-
-At every step a smoothed error measurement: is put out
+At every step a smoothed error measurement is put out, recursively it can be defined like this:
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cfrac%7B%5Cxi%5Ccdot%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D%7D%7B1&plus;%5Cxi%7D)
 
-the intution here is: the smoothing factor xi adjusts how much a single loss value contributes tu the Recent Average Error
+with the smoothing factor xi. The intution here is: the smoothing factor adjusts how much a single loss value contributes tu the Recent Average Error
 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D/%5Cxi%5Cquad%20%28%5Cmathrm%7Bapproximately%7D%29)
 
@@ -42,19 +45,12 @@ The XOR function should return a true value if the two inputs are not equal and 
 ![equ](https://latex.codecogs.com/gif.latex?%5Cbegin%7Btabular%7D%7Bc%7Cc%7Cc%7D%5Chline%20Input%201%20%26Input%202%20%26Output%20%5C%5C%20%5Chline%5Chline%200%20%260%20%260%20%5C%5C%20%5Chline%200%20%261%20%261%20%5C%5C%20%5Chline%201%20%260%20%261%20%5C%5C%20%5Chline%201%20%261%20%260%20%5C%5C%20%5Chline%20%5Cend%7Btabular%7D)
 
 
-# Pipeline
-
-## Generating data
-## Training
-
-
-
 <!-- ############################################################################################ -->
 
+# Pipeline
 
-# Usage
 
-## Producing data
+## Generating data
 
 ```bash
 g++ -o data_gen data_gen.cpp
