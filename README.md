@@ -9,9 +9,19 @@ This repository is a slightly brushed up version of this project, it makes use o
 
 ## Neural Network
 
+The Neural Network has 3 layers, input, output and a hidden layer. The numbers of Neurons per layer is variable, here of course we have
+ -- 2 input Neuons
+ -- 2 hidden Neuons
+ -- 1 output Neuons
+
+Activation: tanh()
+
+Loss: RMS
 
 
-Smoothed error measurement:
+
+At every step a smoothed error measurement: is put out
+
 ![equ](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BRAE%7D%20%5Clongrightarrow%20%5Cfrac%7B%5Cxi%5Ccdot%20%5Cmathrm%7BRAE%7D%20&plus;%20%5Cmathrm%7Bloss%7D%7D%7B1&plus;%5Cxi%7D)
 
 the intution here is: the smoothing factor xi adjusts how much a single loss value contributes tu the Recent Average Error
@@ -62,9 +72,20 @@ g++ -o training training.cpp
 ./training
 ```
 
-
-
 The plotting script utilizes **numpy** and **matplitlib**:
+
+```bash
+pip install numpy
+pip install matplotlib
+```
+then run
+```bash
+python plot.py 
+```
+
+
+
+
 
 
 

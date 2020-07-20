@@ -24,7 +24,7 @@ int main(){
 	int N_samples = train_data.size();
 
 	int N_in = train_data[0].size();
-	int N_hid = 8;
+	int N_hid = 2;
 	int N_out = train_label[0].size();
 
 	std::cout << "Training on " << N_samples << " Samples." << std::endl;
