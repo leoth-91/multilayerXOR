@@ -5,7 +5,7 @@ A couple of years ago I had to come up with a project for a course and decided t
 
 This repository is a slightly brushed up version of this project, it makes use of the original Neural Network class written for the course (header/NeuralNetwork.h) and I have added python scripts for conveniently generating data and plotting errors.
 
-[Neural Network](#Neural Network) | [Pipeline](#Pipeline) | [Exclusive OR](#Exclusive OR) | [Usage](#Usage)
+[Neural Network](#NeuralNetwork) | [Pipeline](#Pipeline) | [ExclusiveOR](#Exclusive OR) | [Usage](#Usage)
 
 ## Neural Network
 
