@@ -30,7 +30,7 @@ The XOR returns True if the inputs are distinct and False otherwise:
  1            | 1             | 0           
 
 ## CSWAP
-Many logical 2-bit gates (eg. AND, OR) can be modeled by a simple Perceptron. The Controlled SWAP (CSWAP) gate or Fredkin gate ([wikipedia](https://en.wikipedia.org/wiki/Fredkin_gate)) is a special case, it has 3 input and 3 output bits. It works as follows:
+The Controlled SWAP (CSWAP) gate or Fredkin gate ([wikipedia](https://en.wikipedia.org/wiki/Fredkin_gate)) has 3 input and 3 output bits and can be used in Quantum Computing. It works as follows:
 
 If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in the following table
 
@@ -48,7 +48,7 @@ If the C-bit is non-zero, Input 1 and Input 2 are switched. This is conveyed in 
 
 # Neural Network
 
-The Neural Network has 3 layers, input, output and a hidden layer. The numbers of Neurons per layer is variable and the number of input/output neurons will be inferred from the data provided. 
+The Neural Network has 3 layers: input, output and a hidden layer. The numbers of Neurons per layer is variable and the number of input/output neurons will be inferred from the data provided. 
 
 For the XOR gate, the network will have 2 inoputs and 1 output. In the case of the CSWAP gate the network will have 3 inputs and 3 outputs. The number of hidden neurons is 2 by defaulf and should be adjusted upwards when training the model on CSWAP data.
 
@@ -96,7 +96,7 @@ g++ -o training training.cpp
 ```
 The default settings are
  - learning rate (eta) = 0.08
- - momenetum (alpha) = 0.1
+ - momentum (alpha) = 0.1
 
 **Note:** When training on the CSWAP data, the Neural Network will automatically initialized with 3 Input and 3 Output neurons, however 2 hidden neurons appear to be insufficient to train the network!
 
@@ -111,6 +111,7 @@ then run
 ```bash
 python plot.py 
 ```
+to obtain a plot like this:
 
 ![Image of RAE plot](https://raw.githubusercontent.com/leoth-91/multilayerXOR/master/error.png)
 
